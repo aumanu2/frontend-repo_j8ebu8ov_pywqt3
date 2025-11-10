@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
-const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'connect@flowvaani.in';
-const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || '+91-XXXXXXXXXX';
+// Prefer environment variables, but default to the provided contact details
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'flowvaani@gmail.com';
+const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || '8319060160';
 
 const Contact = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
