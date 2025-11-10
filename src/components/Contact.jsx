@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'connect@flowvaani.in';
+const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || '+91-XXXXXXXXXX';
+
 const Contact = () => {
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [submitted, setSubmitted] = useState(false);
@@ -9,7 +12,6 @@ const Contact = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // For this landing page we just simulate submit
     setSubmitted(true);
   };
 
@@ -22,8 +24,8 @@ const Contact = () => {
             <p className="mt-2 text-gray-600">Enter your details and our team will get in touch with you.</p>
 
             <div className="mt-6 space-y-4 text-gray-700">
-              <p className="flex items-start gap-3"><Mail className="mt-0.5 h-5 w-5 text-blue-600" /> connect@flowvaani.in</p>
-              <p className="flex items-start gap-3"><Phone className="mt-0.5 h-5 w-5 text-blue-600" /> +91-XXXXXXXXXX</p>
+              <p className="flex items-start gap-3"><Mail className="mt-0.5 h-5 w-5 text-blue-600" /> {CONTACT_EMAIL}</p>
+              <p className="flex items-start gap-3"><Phone className="mt-0.5 h-5 w-5 text-blue-600" /> {CONTACT_PHONE}</p>
               <p className="flex items-start gap-3"><MapPin className="mt-0.5 h-5 w-5 text-blue-600" /> Ambikapur, Chhattisgarh, India</p>
             </div>
           </div>
@@ -52,7 +54,7 @@ const Contact = () => {
                     value={form.phone}
                     onChange={onChange}
                     className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-                    placeholder="+91-XXXXXXXXXX"
+                    placeholder={CONTACT_PHONE}
                   />
                 </div>
                 <div>
@@ -64,7 +66,7 @@ const Contact = () => {
                     value={form.email}
                     onChange={onChange}
                     className="mt-1 w-full rounded-lg border border-gray-300 px-4 py-2 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-200"
-                    placeholder="you@example.com"
+                    placeholder={CONTACT_EMAIL}
                   />
                 </div>
                 <button

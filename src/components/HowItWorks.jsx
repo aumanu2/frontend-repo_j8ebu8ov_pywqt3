@@ -3,9 +3,9 @@ import { Settings, Brain, BarChart3, Phone } from 'lucide-react';
 
 const steps = [
   {
-    title: 'Connect your business phone number',
+    title: 'Get a dedicated business phone number from us',
     icon: Phone,
-    description: 'Plug in your existing number or set up a new one in minutes.',
+    description: 'Choose a new number from our pool and go live in minutes.',
   },
   {
     title: 'Train your AI agent',
