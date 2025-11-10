@@ -1,5 +1,8 @@
 import React from 'react';
 
+const CONTACT_EMAIL = import.meta.env.VITE_CONTACT_EMAIL || 'flowvaani@gmail.com';
+const CONTACT_PHONE = import.meta.env.VITE_CONTACT_PHONE || '8319060160';
+
 const Footer = () => {
   return (
     <footer className="border-t border-gray-200 bg-white py-10">
@@ -7,7 +10,11 @@ const Footer = () => {
         <div className="grid gap-6 md:grid-cols-2 md:items-center">
           <div>
             <h3 className="text-lg font-semibold text-gray-900">Flowvaani Private Limited</h3>
-            <p className="mt-1 text-gray-600">connect@flowvaani.in · +91-XXXXXXXXXX</p>
+            <p className="mt-1 text-gray-600">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-gray-900">{CONTACT_EMAIL}</a>
+              {' '}·{' '}
+              <a href={`tel:${CONTACT_PHONE}`} className="hover:text-gray-900">{CONTACT_PHONE}</a>
+            </p>
             <p className="text-gray-600">Ambikapur, Chhattisgarh, India</p>
           </div>
           <div className="md:text-right">
